@@ -1,22 +1,29 @@
 # Project 2
-+ By: *Diane Bainbridge*
++ By: Diane Bainbridge
 + Production URL: <http://p2.dianebainbridge.com>
 
 ## Outside resources
-*Your list of outside resources go here*
-
++ Consulted https://w3schools.com for styling
++ Image from http://www.ecopsychology.org/gatherings/
 ## 3 Unique inputs
-
-1. *Text input to indicate number of words in password*
-2. *Checkbox to indicate miles or kilometers*
-3. *Dropdown to indicate gallons or liters*
+<ol>
+    <li>Text input for startDistance, endDistance and fuelVolume</li>
+    <li>Radio button to indicate miles or kilometers</li>
+    <li>Dropdown to indicate gallons or liters</li>
+</ol>
 
 ## Class
-*List the name of the class(es) you're using, e.g. `Form.php`, `Password.php`, etc.*
++ Form.php</li>
++ FuelCalculation.php
+
 
 ## Code style divergences
-*List any divergences from PSR-1/PSR-2 and course guidelines on code style*
+None I'm aware of.  I tried but I may have missed something.
 
 ## Notes for instructor
-*I know I am being inconsistenty by using a radio button for distance and a drop down for 
-
++ I know I am being inconsistent by using a radio button for distanceUnit
+and a drop down for volumeUnit but we needed to use 3 unique inputs for
+this project.
++ In a few cases my lines of code wrap with over 80 characters
++ My laptop died on Sunday so I had to get a new laptop and reinstall 
+the software so I couldn't spend as much time on this as I had hoped.

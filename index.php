@@ -1,3 +1,6 @@
+<?php
+require 'includes\session.php';
+?>
 <!DOCTYPE html >
 <html lang="en">
 <head>
@@ -7,20 +10,98 @@
     <link href='css/p2.css' rel='stylesheet'>
 </head>
 <body>
-<div class="content">
+<section class="content">
     <p class="header">Fuel Consumption Calculator</p>
-    <input type="text" placeholder="Mileage at last fill up"/>&#160;
-    <input type="text" placeholder="Mileage at this fill up"/><br/>
-    <input type="radio" name="distance" id="miles" value="miles"/>
-    <label for="miles">Miles</label><br/>
-    <input type="radio" name="distance" id="kilometers" value="kilometers"/>
-    <label for="kilometers">Kilometers</label><br/>
-    <input type="text" placeholder="Amount of gas"/>
-    <label for="unit">Units</label>
-    <select id="unit">
-        <option value="gallons">Gallons</option>
-        <option value="liters">Liters</option>
-    </select>
-</div>
+    &#160;&#160;&#160Use the steps below to calculate your fuel consumption.
+    <ol>
+        <li>Enter the odometer reading from the last time you filled your gas tank.</li>
+        <li>Enter the odometer reading at the time of your current fill up.</li>
+        <li>Enter the amount of fuel required to completely fill you tank at this fill up.</li>
+        <li>Be sure to select the units you are using to measure your distance and the amount of gas.</li>
+    </ol>
+    <p class="note">
+        Note: before you use this the first time completely fill up your gas tank
+        and save the distance read from your odometer.
+    </p>
+    <form method='GET' action='includes/process.php'>
+        <table id="formTable">
+            <tr>
+                <td valign="top" class="leftTD">
+                    <label for="startDistance">Odometer reading - last fill-up </label>
+                    <input id="startDistance" name="startDistance" type="text"
+                           value="<?= $results['startDistance'] ?? ''; ?>"/>
+                    <p class="attention">*required, must be greater than 0</p>
+                    <label for="endDistance">Odometer reading - this fill-up </label>
+                    <input id="endDistance" name="endDistance" type="text"
+                           value="<?= $results['endDistance'] ?? ''; ?>"/>
+                    <p class="attention">*required, must be greater than 0</p>
+                </td>
+                <td class="rightTD">
+                    <input type="radio" name="distanceUnit" id="miles" value="miles"
+                        <?php if ($results['distanceUnit'] == 'miles') : ?>
+                            checked="checked"
+                        <?php endif ?>/>
+                    <label for="miles">Miles</label>
+                    <br/>
+                    <input type="radio" name="distanceUnit" id="kilometers" value="kilometers"
+                        <?php if ($results['distanceUnit'] == 'kilometers') : ?>
+                            checked="checked"
+                        <?php endif ?>/>
+                    <label for="kilometers">Kilometers</label>
+                    <p class="attention">*required, one option must be selected.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftTD">
+                    <label for="fuelVolume">Fuel Reading from Gas Pump </label>
+                    <input id="fuelVolume" name="fuelVolume" type="text"
+                           value="<?= $results['fuelVolume'] ?? ''; ?>"/>
+                    <p class="attention">*required, must be greater than 0</p>
+                </td>
+                <td class=""rightTD">
+                    <select id="volumeUnit" name="volumeUnit">
+                        <option value="gallon"
+                            <?php if ($results['volumeUnit'] == 'gallon') : ?>
+                                selected
+                            <?php endif ?>>
+                            Gallons
+                        </option>
+                        <option value="liter"
+                            <?php if ($results['volumeUnit'] == 'liter') : ?>
+                                selected
+                            <?php endif ?>>
+                            Liters
+                        </option>
+                    </select>
+                    <p class="attention">*required, one option must be selected</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type='submit' value='Calculate Fuel Consumption'>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <?php if (!(is_null($results)) && !$results['hasErrors'] && $results['fuelConsumed']) : ?>
+        <p class="calculationResult">
+            Fuel consumption is <?= $results['fuelConsumed'] ?? '' ?>
+            <?= $results['distanceUnit'] ?? '' ?> /
+            <?= $results['volumeUnit'] ?? '' ?>
+        </p>
+    <?php endif ?>
+    <?php if (!(is_null($results)) && ($results['hasErrors'] || $results['customError'] != '')) : ?>
+        <div class='alert alert-danger'>
+            <ul>Please correct the following:
+                <?php foreach ($results['formErrors'] as $error) : ?>
+                    <li><?= $error ?></li>
+                <?php endforeach ?>
+                <?php if ($results['customError'] != '') : ?>
+                    <li><?= $results['customError'] ?></li>
+                <?php endif ?>
+            </ul>
+        </div>
+    <?php endif ?>
+</section>
 </body>
 </html>
