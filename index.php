@@ -73,11 +73,11 @@ require 'includes/session.php';
                             Liters
                         </option>
                     </select>
-                <p class="attention">*required, one option must be selected</p>
+                    <p class="attention">*required, one option must be selected</p>
                 </td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
+                <td colspan="2" class="buttonTD">
                     <input type='submit' value='Calculate Fuel Consumption'>
                 </td>
             </tr>
