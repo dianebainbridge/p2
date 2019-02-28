@@ -12,7 +12,7 @@ require 'includes/session.php';
 <body>
 <section class="content">
     <h1 class="header">Fuel Consumption Calculator</h1>
-    &#160;&#160;&#160;<p>Use the steps below to calculate your fuel consumption.</p>
+    <p class="subHeader">Use the steps below to calculate your fuel consumption.</p>
     <ol>
         <li>Enter the odometer reading from the last time you filled your gas tank.</li>
         <li>Enter the odometer reading at the time of your current fill up.</li>
@@ -60,6 +60,7 @@ require 'includes/session.php';
                 </td>
                 <td class="rightTD">
                     <select id="volumeUnit" name="volumeUnit">
+                        <option ></option>
                         <option value="gallon"
                             <?php if ($results['volumeUnit'] == 'gallon') : ?>
                                 selected
@@ -73,6 +74,7 @@ require 'includes/session.php';
                             Liters
                         </option>
                     </select>
+                    <label for="volumeUnit">Select option</label>
                     <p class="attention">*required, one option must be selected</p>
                 </td>
             </tr>

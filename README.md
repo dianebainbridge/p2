@@ -28,4 +28,4 @@ this project.
 + My laptop died on Sunday so I had to get a new laptop and reinstall 
 the software so I couldn't spend as much time on this as I had hoped.
 + Just had to reset my password per you permission denied public keys 
-won't get to commenting all my code tonight but I will do it.
+but I think I got to everything.  Good reviewo all of the steps!

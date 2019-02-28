@@ -21,7 +21,7 @@ class FuelCalculation
         $this->startingDistance = $startingDistance;
         $this->endingDistance = $endingDistance;
     }
-
+    #get and set methods
     public function getStartingDistance(): float
     {
         return $this->startingDistance;
@@ -71,7 +71,7 @@ class FuelCalculation
     {
         $this->fuelVolume = $volume;
     }
-
+    #fuel calculation method - this is intentionally without units so you could calculate miles/liter if desired
     public function getFuelConsumed(): float
     {
         $fuelConsumed = ($this->getEndingDistance() - $this->getStartingDistance()) / $this->getFuelVolume();
