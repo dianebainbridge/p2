@@ -60,7 +60,7 @@ require 'includes/session.php';
                 </td>
                 <td class="rightTD">
                     <select id="volumeUnit" name="volumeUnit">
-                        <option ></option>
+                        <option> </option>
                         <option value="gallon"
                             <?php if ($results['volumeUnit'] == 'gallon') : ?>
                                 selected
