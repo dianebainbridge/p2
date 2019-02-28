@@ -106,12 +106,13 @@ input[type=submit] {
 }
 
 .calculationResult {
-    margin-left: 150px;
     color: gray;
     background-color: white;
     border: 1px gray solid;
     padding: 5px;
     width: 300px;
+    margin: 7px auto;
+    text-align: center;
 }
 
 .alert {
