@@ -58,8 +58,8 @@ li {
 }
 
 .leftTD > .attention {
-    text-align: right;
-    margin-right: 100px;
+    text-align: left;
+    margin-left: 200px;
     vertical-align: top;
 }
 
