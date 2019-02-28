@@ -13,18 +13,18 @@
 </ol>
 
 ## Class
-+ Form.php</li>
++ Form.php
 + FuelCalculation.php
 
 
 ## Code style divergences
-None I'm aware of.  I tried but I may have missed something.
++ In a few cases my lines of code wrap with over 80 characters
 
 ## Notes for instructor
 + I know I am being inconsistent by using a radio button for distanceUnit
 and a drop down for volumeUnit but we needed to use 3 unique inputs for
 this project.
-+ In a few cases my lines of code wrap with over 80 characters
+
 + My laptop died on Sunday so I had to get a new laptop and reinstall 
 the software so I couldn't spend as much time on this as I had hoped.
 + Just had to reset my password per you permission denied public keys 
