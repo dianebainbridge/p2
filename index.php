@@ -16,7 +16,7 @@ require 'includes/session.php';
     <ol>
         <li>Enter the odometer reading from the last time you filled your gas tank.</li>
         <li>Enter the odometer reading at the time of your current fill up.</li>
-        <li>Enter the amount of fuel required to completely fill you tank at this fill up.</li>
+        <li>Enter the amount of fuel required to completely fill your tank at this fill up.</li>
         <li>Be sure to select the units you are using to measure your distance and the amount of gas.</li>
     </ol>
     <p class="note">
