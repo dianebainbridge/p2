@@ -53,7 +53,8 @@ li {
 
 .leftTD > .attention {
     text-align: right;
-    margin-right: 59px;
+    margin-right: 100px;
+    vertical-align: top;
 }
 
 .rightTD > .attention {

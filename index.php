@@ -11,8 +11,8 @@ require 'includes/session.php';
 </head>
 <body>
 <section class="content">
-    <p class="header">Fuel Consumption Calculator</p>
-    &#160;&#160;&#160Use the steps below to calculate your fuel consumption.
+    <h1 class="header">Fuel Consumption Calculator</h1>
+    &#160;&#160;&#160;<p>Use the steps below to calculate your fuel consumption.</p>
     <ol>
         <li>Enter the odometer reading from the last time you filled your gas tank.</li>
         <li>Enter the odometer reading at the time of your current fill up.</li>
@@ -26,7 +26,7 @@ require 'includes/session.php';
     <form method='GET' action='includes/process.php'>
         <table id="formTable">
             <tr>
-                <td valign="top" class="leftTD">
+                <td class="leftTD">
                     <label for="startDistance">Odometer reading - last fill-up </label>
                     <input id="startDistance" name="startDistance" type="text"
                            value="<?= $results['startDistance'] ?? ''; ?>"/>
@@ -58,7 +58,7 @@ require 'includes/session.php';
                            value="<?= $results['fuelVolume'] ?? ''; ?>"/>
                     <p class="attention">*required, must be greater than 0</p>
                 </td>
-                <td class=""rightTD">
+                <td class="rightTD">
                     <select id="volumeUnit" name="volumeUnit">
                         <option value="gallon"
                             <?php if ($results['volumeUnit'] == 'gallon') : ?>
@@ -73,7 +73,7 @@ require 'includes/session.php';
                             Liters
                         </option>
                     </select>
-                    <p class="attention">*required, one option must be selected</p>
+                <p class="attention">*required, one option must be selected</p>
                 </td>
             </tr>
             <tr>
