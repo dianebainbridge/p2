@@ -27,3 +27,5 @@ this project.
 + In a few cases my lines of code wrap with over 80 characters
 + My laptop died on Sunday so I had to get a new laptop and reinstall 
 the software so I couldn't spend as much time on this as I had hoped.
++ Just had to reset my password per you permission denied public keys 
+won't get to commenting all my code tonight but I will do it
